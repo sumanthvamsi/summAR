@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<style>
+		p {
+		color: green;
+		}
+	</style>
+	<p>
+		How to trigger a file download when
+		clicking an HTML button or JavaScript?
+	<p >
+		<textarea id="text" style="display: none;">
+			The doctor examines a man with severe chest pain. He begins by asking the man to tell him of his gender and age before he begins his examination. The man identifies himself as 39, a male, and tells the doctor about the pain he's been experiencing. He says it started yesterday but it's gotten worse today. The doctor comments that the man has a sharp chest pain that's becoming "sharp" and "becoming sharper." After the man provides a few more details about his chest pain, the doctor concludes the examination and begins to write out a prescription for some sort of medicine to treat the pain. As the doctor writes down the man's information, the man asks the doctor to refer to him as "patient 39" because that's his name.
+		</textarea>
+		<br/>
+		<input type="button" id="btn"
+				value="Download" />
+		<script>
+			function download(file, text) {
+			
+				//creating an invisible element
+				var element = document.createElement('a');
+				element.setAttribute('href',
+				'data:text/plain;charset=utf-8, '
+				+ encodeURIComponent(text));
+				element.setAttribute('download', file);
+			
+				// Above code is equivalent to
+				// <a href="path of file" download="file name">
+			
+				document.body.appendChild(element);
+			
+				//onClick property
+				element.click();
+			
+				document.body.removeChild(element);
+			}
+			
+			// Start file download.
+			document.getElementById("btn")
+			.addEventListener("click", function() {
+				// Generate download of hello.txt
+				// file with some content
+				var text = document.getElementById("text").value;
+				var filename = "summ.txt";
+			
+				download(filename, text);
+			}, false);
+		</script>
+</body>
+</html>

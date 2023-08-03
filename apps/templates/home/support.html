@@ -1,0 +1,217 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Support</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">About Us</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Support</a></li>
+                                    </ul>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+                                    <style>
+                                        body {
+                                            font-family: Arial, sans-serif;
+                                        }
+                                
+                                        .contact-container {
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
+                                            height: 70vh;
+                                        }
+                                
+                                        .contact-form {
+                                            max-width: 400px;
+                                            width: 100%;
+                                            border: 1px solid #ccc;
+                                            padding: 20px;
+                                            border-radius: 5px;
+                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                        }
+                                
+                                        .form-group {
+                                            margin-bottom: 20px;
+                                        }
+                                
+                                        .form-group label {
+                                            font-size: 18px;
+                                            font-weight: bold;
+                                            display: block;
+                                            margin-bottom: 5px;
+                                        }
+                                
+                                        .form-group input,
+                                        .form-group textarea {
+                                            width: 100%;
+                                            padding: 10px;
+                                            font-size: 16px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 5px;
+                                        }
+                                
+                                        .form-group textarea {
+                                            resize: vertical;
+                                            min-height: 100px;
+                                        }
+                                
+                                        .submit-btn {
+                                            background-color: #007BFF;
+                                            color: #fff;
+                                            border: none;
+                                            padding: 10px 20px;
+                                            font-size: 18px;
+                                            border-radius: 5px;
+                                            cursor: pointer;
+                                            transition: background-color 0.2s;
+                                        }
+                                
+                                        .submit-btn:hover {
+                                            background-color: #0056b3;
+                                        }
+                                
+                                        /* New styles for phone number and email */
+                                        .contact-details {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            margin-top: 20px;
+                                        }
+                                
+                                        .contact-details i {
+                                            margin-right: 10px;
+                                        }
+                                    </style>
+                                   <div class="contact-container">
+                                        <h2>Contact Us</h2>
+                                        <div class="contact-form">
+                                            <form action="#" method="post">
+                                                <div class="form-group">
+                                                    <label for="name">Your Name:</label>
+                                                    <input type="text" id="name" name="name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Your Email:</label>
+                                                    <input type="email" id="email" name="email" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message">Query:</label>
+                                                    <textarea id="message" name="message" required></textarea>
+                                                </div>
+                                                <button type="submit" class="submit-btn">Submit</button>
+                                            </form>
+                                        </div>
+                                        <!-- Contact details with icons -->
+                                        <div class="contact-details">
+                                            <i class="fas fa-phone"></i>
+                                            <p>123-456-7890</p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            <i class="fas fa-envelope"></i>
+                                            <p>contact@yourwebsite.com</p>
+                                        </div>
+                                    </div>   
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- Input group -->
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <P>{{name}}</P>
+                                    <P>{{ans}}</P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <!-- <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Feedback</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <ul class="breadcrumb">
+                                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-user"></i></a></li>
+                                                        <li class="breadcrumb-item"><a href="javascript:">{{name}}</a></li>
+                                                    </ul>
+                                                    <ul class="breadcrumb">
+                                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-cloud"></i></a></li>
+                                                        <li class="breadcrumb-item"><a href="javascript:">{{ans}}</a></li>
+                                                    </ul>
+                                                
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                             [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

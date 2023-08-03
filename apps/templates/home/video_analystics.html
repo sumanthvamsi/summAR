@@ -1,0 +1,321 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}  {% endblock stylesheets %}
+{% block content %}
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="row">
+              
+              
+             
+                <!-- <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-header">
+                           <h5>AI Analysis for the Patient {{p}}</h5>
+                      </div>
+                      <div class="card-block">
+                          <div class="row"> 
+                            <p>{{duration}}</p>
+                            <p>{{words}}</p>
+                            <p>{{topic}}</p>
+                            <p>{{sentiment}}  </p>
+                            <p>{{sentences}}</p>
+                           <a href="{{link}}"> <button class="btn btn-primary">Click here</button></a>
+                          </div>
+                      </div>
+                  </div>
+                </div> -->
+                <div class="col-sm-4">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">AI Analysis</h5>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                        <li class="breadcrumb-item"><a href="javascript:">Metaverse</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:">Analysis</a></li>
+                    </ul>
+                  <div class="card">
+                      <div class="card-header">
+                          <h5>Satisfaction level</h5>
+                      </div>
+                      <div class="gauge-wrapper">
+                          <div class="gauge four rischio3">
+                              <div class="gauge-center">
+                                  <div class="label">Level</div>
+                                  <div class="number" id="satisfaction-score">1</div>
+                              </div>
+                              <div class="needle"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                      <h5>Duration of the Call</h5>
+                  </div>
+                  <div class="card-block">
+                    <div class="number-container">
+                      <span id="displayed-number">{{duration}} minutes</span>
+                  </div>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-4">
+              <div class="card">
+                <div class="card-header">
+                    <h5>Topic Identified</h5>
+                </div>
+                <div class="card-block">
+                  <h5 class="animated-text">{{topic}}</h5>
+                  <br>
+                  <a href="{{link}}"><button class="animated-button">Exercises and Diet plans</button></a>
+                </div>
+              </div>
+           </div>
+               <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                        <h5>Top 10 Keywords in the Transcript</h5>
+                    </div>
+                    <div class="card-block">
+                      <table border="1">
+                        <tr>
+                            <th>Key Words</th>
+                            <th>Key Sentences</th>
+                        </tr>
+                        {% for element, value in elements %}
+                        <tr>
+                            <td>{{ element }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    </div>
+                  </div>
+               </div>
+               
+                
+                
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+     .animated-button {
+            padding: 15px 30px;
+            font-size: 10px;
+            background-image: linear-gradient(45deg, #ff7f50, #ff1493, #9400d3, #00ced1);
+            border: none;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .animated-button:hover {
+            transform: scale(1.1);
+        }
+        .animated-button:active {
+            transform: scale(0.9);
+        }
+    .animated-text {
+            font-size: 30px;
+            background-image: linear-gradient(45deg, #ff7f50, #ff1493, #9400d3, #00ced1);
+            background-size: 300% 300%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: rainbow-text 5s linear infinite;
+        }
+        @keyframes rainbow-text {
+            0% { background-position: 0 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
+        }
+     .number-container {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 26px;
+            border-radius: 10px;
+            width: 200px;
+            margin: 33px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+.chart-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .chart {
+            width: 100%;
+            height: 300px;
+        }
+
+   table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    .gauge-wrapper {
+        display: inline-block;
+        width: auto;
+        margin: 0 auto;
+        padding: 70px 15px 15px;
+    }
+
+    .gauge {
+        background: linear-gradient(to right, #e84c3d, #1eaa59); /* Change background color from red to green */
+        box-shadow: 0 -3px 6px 2px rgba(0, 0, 0, 0.50);
+        width: 200px;
+        height: 100px;
+        border-radius: 100px 100px 0 0!important;
+        position: relative;
+        overflow: hidden;
+    }
+    .gauge.min-scaled {
+        transform: scale(0.5);
+    }
+
+    .gauge-center {
+        content: '';
+        color: #fff;
+        width: 60%;
+        height: 60%;
+        background: #15222E;
+        border-radius: 100px 100px 0 0!important;
+        position: absolute;
+        box-shadow: 0 -13px 15px -10px rgba(0, 0, 0, 0.28);
+        right: 21%;
+        bottom: 0;
+        color: #fff;
+        z-index:10;
+    }
+
+    .gauge-center .label, .gauge-center .number {display:block; width: 100%; text-align: center; border:0!important;}
+    .gauge-center .label {font-size:0.75em; opacity:0.6; margin:1.1em 0 0.3em 0;}
+    .gauge-center .number {font-size:1.2em;}
+
+    .needle {
+        width: 80px;
+        height: 7px;
+        background: #15222E;
+        border-bottom-left-radius: 100%!important;
+        border-bottom-right-radius: 5px!important;
+        border-top-left-radius: 100%!important;
+        border-top-right-radius: 5px!important;
+        position: absolute;
+        bottom: -2px;
+        left: 20px;
+        transform-origin: 100% 4px;
+        transform: rotate(0deg);
+        box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
+        display:none;
+        z-index:9;
+    }
+
+    .four.rischio1 .needle {animation: fourspeed1 2s 1 both; animation-delay: 1s; display:block;}
+    .four.rischio2 .needle {animation: fourspeed2 2s 1 both; animation-delay: 1s; display:block;}
+    .four.rischio3 .needle {animation: fourspeed3 2s 1 both; animation-delay: 1s; display:block;}
+    .four.rischio4 .needle {animation: fourspeed4 2s 1 both; animation-delay: 1s; display:block;}
+
+    .slice-colors {height:100%;}
+
+    .slice-colors .st {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;  
+    }
+
+    .four .slice-colors .st.slice-item:nth-child(2) {
+        border-top: 50px #f1c40f solid;
+        border-right: 50px #f1c40f solid;
+        background-color:#1eaa59;
+    }
+
+    .four .slice-colors .st.slice-item:nth-child(4) {
+        left:50%;
+        border-bottom: 50px #E84C3D solid;
+        border-right: 50px #E84C3D solid;
+        background-color:#e67e22;
+    }
+
+    @-webkit-keyframes fourspeed1 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(16deg);}
+    }
+
+    @-webkit-keyframes fourspeed2 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(65deg);}
+    }
+
+    @-webkit-keyframes fourspeed3 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(115deg);}
+    }
+
+    @-webkit-keyframes fourspeed4 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(164deg);}
+    }
+</style>
+
+<script>
+    // JavaScript to update the gauge meter with the sentiment score
+    function updateGaugeMeter(sentimentScore) {
+        // Ensure the sentiment score is within the range of 1 to 10
+        sentimentScore = Math.min(Math.max(sentimentScore, 1), 10);
+
+        // Calculate the rotation angle for the gauge needle
+        const angle = -135 + ((sentimentScore - 1) * 18);
+
+        // Update the rotation of the gauge needle
+        $('.needle').css('transform', `rotate(${angle}deg)`);
+
+        // Update the satisfaction score below the gauge
+        $('#satisfaction-score').text(sentimentScore);
+    }
+
+    // Example usage:
+    const sentimentScore = 1; // Replace this with the actual sentiment score (range: 1 to 10) from your data
+    updateGaugeMeter(sentimentScore);
+</script>
+  
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

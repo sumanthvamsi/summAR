@@ -1,0 +1,140 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Feedback</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">More Resources</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Feedback</a></li>
+                                    </ul>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Feedback</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <form action="{% url 'forum'  %}" method='POST' enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <form action="" class="user_name">
+                                                            <p style="font-family: Verdana,sans-serif; font-size:15px "><b>Your Feedback helps us to improve!!</b></p>
+                                                          <!-- <input type="text" class="form_control" name="user_name"/><br> -->
+                                                          <label style="font-family: Verdana,sans-serif; font-size:15px ">Name:</label>
+                                                          <input type="text" class="form-control"name="user_name" placeholder="Name"> 
+                                                          <br>
+                                                          <p style="font-family: Verdana,sans-serif; font-size:15px ">Enter Your Feedback:</p>
+                                                          <textarea class="form-control" id="exampleFormControlTextarea1" name="answer" rows="3"></textarea>
+                                                          <br>
+                                                          <input class="btn btn-primary" type="submit">
+                                                        </form>
+                                                        </form>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- Input group -->
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <P>{{name}}</P>
+                                    <P>{{ans}}</P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <!-- <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Feedback</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <ul class="breadcrumb">
+                                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-user"></i></a></li>
+                                                        <li class="breadcrumb-item"><a href="javascript:">{{name}}</a></li>
+                                                    </ul>
+                                                    <ul class="breadcrumb">
+                                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-cloud"></i></a></li>
+                                                        <li class="breadcrumb-item"><a href="javascript:">{{ans}}</a></li>
+                                                    </ul>
+                                                
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                             [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

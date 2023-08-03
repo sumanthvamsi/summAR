@@ -1,0 +1,177 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>
+  /* Style the slider container */
+  .slider-container {
+      width: 300px;
+      margin: 20px auto;
+  }
+
+  /* Style the slider */
+  input[type="range"] {
+      width: 100%;
+  }
+
+  /* Style the slider labels */
+  .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+  }
+</style>
+{% endblock stylesheets %}
+{% block content %}
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="row">
+              
+              
+             
+                <div class="col-sm-12">
+                  <div class="page-header-title">
+                    <h5 class="m-b-10">Summary</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="javascript:">Summary</a></li>
+                </ul>
+                  <div class="card">
+                      <div class="card-header">
+                           <h5><b>UPLOAD YOUR AUDIO FILE</b></h5>
+                      </div>
+                      <div class="card-block">
+                          <div class="row"> 
+                            <form action="{% url 'audio'  %}" method='POST' enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <p style="font-family: Verdana,sans-serif; font-size:15px ">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="p_name">
+                                <br>
+                                <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="p_num">
+                                <br>
+                                <p style="font-family: Verdana,sans-serif; font-size:15px">Submit your Audio File : </p><input type="file" class="form-control" name="audio_file" accept="audio/*" multiple>
+                                <br>
+                                <p style="font-family: Verdana,sans-serif; font-size:15px">Select the Summary Length : </p><input type="range" min="1" max="3" value="1" id="slider" name="slider_value" list="tickmarks">
+                                <span id="sliderValue">Short</span>
+                                <datalist id="tickmarks">
+                                    <option value="1">Short</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">Large</option>
+                                </datalist>
+                              </div>  
+                              <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-header">
+                        <h5><b>SUMMARY OF {{p_name}}</b> </h5>
+                         
+                      </div>
+                      <div class="card-block">
+                          <div class="row">
+                            <p style="font-family: Verdana,sans-serif; font-size:15px; color:black">{{sum}}</p>
+                            <br>
+                            <textarea id="text" style="display: none;">
+                              
+                              {{download}}   
+                            </textarea>
+                            <br/>
+                            <input type="button" class="btn btn-success" id="btn"
+                                value="Download" />
+                            <script>
+                              function download(file, text) {
+                              
+                                //creating an invisible element
+                                var element = document.createElement('a');
+                                element.setAttribute('href',
+                                'data:text/plain;charset=utf-8, '
+                                + encodeURIComponent(text));
+                                element.setAttribute('download', file);
+                              
+                                // Above code is equivalent to
+                                // <a href="path of file" download="file name">
+                              
+                                document.body.appendChild(element);
+                              
+                                //onClick property
+                                element.click();
+                              
+                                document.body.removeChild(element);
+                              }
+                              
+                              // Start file download.
+                              document.getElementById("btn")
+                              .addEventListener("click", function() {
+                                // Generate download of hello.txt
+                                // file with some content
+                                var text = document.getElementById("text").value;
+                                var filename = "summ.txt";
+                              
+                                download(filename, text);
+                              }, false);
+                            </script>
+
+                            <form action="/analysis/{{ id }}/" method='POST' enctype="multipart/form-data">
+                              {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Perform AI Analysis</button>
+                          </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+ document.getElementById('slider').addEventListener('input', function() {
+            let value = this.value;
+            let percent = ["short","medium","large"];
+            document.getElementById('sliderValue').textContent = percent[value-1];
+        });
+
+document.getElementById('downloadButton').addEventListener('click', function() {
+    // Replace 'path/to/your/file.txt' with the actual path to your file.
+    var filePath = 'media\new_transcripts\output_1.docx';
+
+    // Create an anchor element to initiate the download
+    var downloadLink = document.createElement('a');
+    downloadLink.href = filePath;
+    downloadLink.download = 'file.txt';
+
+    // Append the link to the document body (required for Firefox)
+    document.body.appendChild(downloadLink);
+
+    // Trigger the download
+    downloadLink.click();
+
+    // Remove the link from the document body after triggering the download
+    document.body.removeChild(downloadLink);
+});
+
+
+</script>
+{% endblock javascripts %}

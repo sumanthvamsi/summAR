@@ -1,0 +1,212 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>
+  /* Style the slider container */
+  .slider-container {
+      width: 300px;
+      margin: 20px auto;
+  }
+
+  /* Style the slider */
+  input[type="range"] {
+      width: 100%;
+  }
+
+  /* Style the slider labels */
+  .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+  }
+</style>
+{% endblock stylesheets %}
+{% block content %}
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="row">
+              
+              
+             
+                <div class="col-sm-12">
+                  <div class="page-header-title">
+                    <h5 class="m-b-10">Past History</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="javascript:">Past History</a></li>
+                </ul>
+                  <div class="card">
+                      <div class="card-header">
+                           <h5><b>GET PREVIOUS SUMMARIES </b></h5>
+                      </div>
+                      <div class="card-block">
+                          <div class="row"> 
+                            <form action="{% url 'cloud'  %}" method='POST' enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+                                <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="p_name">
+                                <br>
+                                <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="p_num">
+                                <br>
+                                
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-header">
+                         <h5><b>PAST HISTORY OF {{name}}</b></h5>
+                         <br>
+                       
+                      </div>
+                      <div class="card-block">
+                          <div class="row">
+                            <table border="1">
+                              <tr>
+                                  <th><center>Date</center></th>
+                                  <th><center>Summary</center></th>
+                                  <th><center>Audio File</center></th>
+                              </tr>
+                              {% for i in data %}
+                              <tr>
+                                  <td style="font-family: Verdana,sans-serif; font-size:15px; color: black;">{{ i.0 }}</td>
+                                  <td style="font-family: Verdana,sans-serif; font-size:15px; color: black;">{{ i.1 }}</td>
+                                  <td><audio  controls>
+                                    <source src="static/assets/audio/{{i.2}}" ></source>
+                                  </audio></td>
+                                  
+                              </tr>
+                              {% endfor %}
+                          </table>
+                          <style>
+                            /* CSS for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the audio player */
+audio {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Optional: Style the audio player controls */
+audio::-webkit-media-controls-panel {
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+  background-color: #333;
+}
+
+                          </style>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-header">
+                         <h5><b>OVERALL SUMMARY OF {{name}}</b></h5>
+                       
+                      </div>
+                      <div class="card-block">
+                          <div class="row">
+                            <p style="font-family: Verdana,sans-serif; font-size:15px; color: black;">{{overall}}</p>
+                            <br>
+                            <textarea id="text" style="display: none;">
+                              
+                              {{download}}   
+                            </textarea>
+                            <br/>
+                            <input type="button" class="btn btn-success" id="btn"
+                                value="Download" />
+                            <script>
+                              function download(file, text) {
+                              
+                                //creating an invisible element
+                                var element = document.createElement('a');
+                                element.setAttribute('href',
+                                'data:text/plain;charset=utf-8, '
+                                + encodeURIComponent(text));
+                                element.setAttribute('download', file);
+                              
+                                // Above code is equivalent to
+                                // <a href="path of file" download="file name">
+                              
+                                document.body.appendChild(element);
+                              
+                                //onClick property
+                                element.click();
+                              
+                                document.body.removeChild(element);
+                              }
+                              
+                              // Start file download.
+                              document.getElementById("btn")
+                              .addEventListener("click", function() {
+                                // Generate download of hello.txt
+                                // file with some content
+                                var text = document.getElementById("text").value;
+                                var filename = "summ.txt";
+                              
+                                download(filename, text);
+                              }, false);
+                            </script>
+
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

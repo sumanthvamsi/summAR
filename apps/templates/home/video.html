@@ -1,0 +1,314 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}  {% endblock stylesheets %}
+{% block content %}
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="row">
+              
+              <div class="col-sm-12">
+                <div class="page-header-title">
+                  <h5 class="m-b-10">Metaverse</h5>
+              </div>
+              <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="javascript:">Metaverse</a></li>
+              </ul>
+                <div class="card">
+                    <div class="card-header">
+                         <h5><b>COMMUNITY GUIDELINES</b></h5>
+                    </div>
+                    <section class="slideshow">
+                      <div class="content">
+                         <div class="slider-content">
+                            <figure class="shadow"><img src="/static/assets/images/meta1.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta2.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta3.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta4.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta5.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta6.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta7.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta8.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta4.png"></figure>
+                            <figure class="shadow"><img src="/static/assets/images/meta6.png"></figure>
+                            
+                         </div>
+                      </div>
+                    </section>
+                    <style>
+                      .slideshow{
+                        margin: 1000 auto;
+                        padding-top: 15px;
+                        height: 200px;
+                        perspective: 10000000000000px;
+                      }
+                      .content{
+                        margin: auto;
+                        width: 150px;
+                        perspective: 10000px;
+                        position:relative;
+                        padding-top: 10px;
+                        transform-style: preserve-3d;
+                      }
+                      .slider-content{
+                        width: 100%;
+                        position:absolute;
+                        float:right;
+                        animation: rotate 30s infinite linear;
+                        transform-style: preserve-3d;
+                      }
+                      .slider-content:hover{
+                        cursor: pointer;
+                        animation-play-state: paused;
+                      }
+                      .slider-content figure{
+                        width:200px;
+                        height:200px;
+                        border:1px solid #555;
+                        overflow:hidden;
+                        position:absolute;
+                      }
+                      .slider-content img{
+                        image-rendering: auto;
+                        transition: all 300ms;
+                        width: 100%;
+                        height: 100%;
+                      }
+                      .slider-content img:hover{
+                        transform: scale(1.2); 
+                        transition: all 300ms; 
+                     } 
+                     .shadow{ 
+                        position: absolute; 
+                        box-shadow: 0px 0px 0px #000; 
+                     }
+                     .slider-content figure:nth-child(1){
+                      transform:rotateY(0deg) translateZ(300px);
+                    }
+                     
+                    .slider-content figure:nth-child(2){
+                      transform:rotateY(40deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(3){
+                      transform:rotateY(80deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(4){
+                      transform:rotateY(120deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(5){
+                      transform:rotateY(160deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(6){
+                      transform:rotateY(200deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(7){
+                      transform:rotateY(240deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(8){
+                      transform:rotateY(280deg) translateZ(300px);
+                    }
+                    .slider-content figure:nth-child(9){
+                      transform:rotateY(320deg) translateZ(300px);
+                    }
+                    @keyframes rotate {
+                      from{
+                        transform: rotateY(0deg);
+                      }
+                      to{
+                          transform: rotateY(360deg);
+                      }
+                    }
+                    </style>
+                    <div class="card-block">
+                        <div class="row"> 
+                       
+                          <br>
+                          <style>
+                          .image-container {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                
+                        /* CSS to style individual images */
+                        .image-container img {
+                            width: 300px;
+                            height: 300px; /* Adjust the width as per your requirement */
+                           
+                            margin-left: 50px; /* This ensures the aspect ratio is maintained */
+                            margin-right: 10px; /* Add some spacing between the images */
+                        }
+                      </style>
+                      <br>
+                          <ol>           
+                            <br>                    
+                              <li style="font-size: large;"><b>Be Respectful:</b> Treat others with respect and kindness. Do not engage in harassment, hate speech, or discriminatory behavior. </li><br>
+                              <li style="font-size: large;"><b>Keep it Positive:</b> Keep Maintain a positive and constructive attitude in your interactions. Avoid negativity, trolling, or disruptive behavior.                                </li><br>
+                              <li style="font-size: large;"><b>No Spam or Self-Promotion:</b> Do not spam the platform with unrelated or promotional content. Respect the community and focus on relevant discussions.
+                              </li><br>
+                              <li style="font-size: large;"><b>Protect Privacy:</b> Respect the privacy of others. Do not share personal information or engage in unauthorized data collection.
+                              </li><br>
+                              <li style="font-size: large;"><b>Follow Copyright Laws:</b> Only share content that you have the right to share. Respect intellectual property rights and do not plagiarize or infringe on copyrights.
+                              </li><br>
+                              <li style="font-size: large;"><b>Report Violations:</b> If you come across any violations of the platform rules or witness inappropriate behavior, report it to the platform moderators or administrators.
+                              </li><br>
+                              <li style="font-size: large;"><b>No Offensive Content:</b> Do not post or share offensive, obscene, or explicit content. Keep the platform safe and suitable for users of all ages.
+                              </li><br>
+                              <li style="font-size: large;"><b>Engage in Dialogue:</b> Encourage healthy discussions and exchange of ideas. Listen to others' perspectives and engage in meaningful conversations.
+                              </li><br>
+                              <li style="font-size: large;"><b>Follow Platform Guidelines:</b> Adhere to the platform's guidelines and terms of service. Familiarize yourself with the rules and ensure compliance.</li>
+                          </ol>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button onclick="openLinkInNewTab()" class="btn btn-primary">Enter Metaverse</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              
+          </div>
+              
+              
+          <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                  <h5><b>UPLOAD YOUR VIDEO FILE</b></h5>
+                </div>
+                <div class="card-block">
+                    <div class="row"> 
+                      <form action="{% url 'video'  %}" method='POST' enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <p style="font-family: Verdana,sans-serif; font-size:15px ">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="pv_name">
+                          <br>
+                          <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="pv_num">
+                          <br>
+                          <p style="font-family: Verdana,sans-serif; font-size:15px">Submit your Video File : </p><input type="file" class="form-control" name="video_file" accept="video/*" multiple>
+                          <br>
+                          <p style="font-family: Verdana,sans-serif; font-size:15px">Select the Summary Length : </p><input type="range" min="1" max="3" value="1" id="slider" name="slider_value" style="width: 300px;" list="tickmarks">
+                          <span id="sliderValue">Short</span>
+                          <datalist id="tickmarks">
+                              <option value="1">Short</option>
+                              <option value="2">Medium</option>
+                              <option value="3">Large</option>
+                          </datalist>
+                        </div>  
+                        <br>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                   <h5><b>SUMMARY OF </b> {{pv_name}}</h5>
+                   
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                      <p style="font-family: Verdana,sans-serif; font-size:15px; color: black;">{{sum}}</p>
+                      <br>
+                      <textarea id="text" style="display: none;">
+                              
+                        {{download}}   
+                      </textarea>
+                      <br/>
+                      <input type="button" class="btn btn-success" id="btn"
+                          value="Download" />
+                      <script>
+                        function download(file, text) {
+                        
+                          //creating an invisible element
+                          var element = document.createElement('a');
+                          element.setAttribute('href',
+                          'data:text/plain;charset=utf-8, '
+                          + encodeURIComponent(text));
+                          element.setAttribute('download', file);
+                        
+                          // Above code is equivalent to
+                          // <a href="path of file" download="file name">
+                        
+                          document.body.appendChild(element);
+                        
+                          //onClick property
+                          element.click();
+                        
+                          document.body.removeChild(element);
+                        }
+                        
+                        // Start file download.
+                        document.getElementById("btn")
+                        .addEventListener("click", function() {
+                          // Generate download of hello.txt
+                          // file with some content
+                          var text = document.getElementById("text").value;
+                          var filename = "summ.txt";
+                        
+                          download(filename, text);
+                        }, false);
+                      </script>
+
+
+                      <form action="/v_analysis/{{ id }}/" method='POST' enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <button type="submit" class="btn btn-primary">Perform AI Analysis</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+            </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+  function openLinkInNewTab() {
+      // Replace 'your-link-url' with the actual URL you want to open in a new tab
+      var linkUrl = 'https://framevr.io/newframe0';
+
+      // Open the link in a new tab
+      window.open(linkUrl, '_blank');
+    }
+
+  document.getElementById('slider').addEventListener('input', function() {
+             let value = this.value;
+             let percent = ["short","medium","large"];
+             document.getElementById('sliderValue').textContent = percent[value-1];
+         });
+ 
+ document.getElementById('downloadButton').addEventListener('click', function() {
+     // Replace 'path/to/your/file.txt' with the actual path to your file.
+     var filePath = 'media\new_transcripts\output_1.docx';
+ 
+     // Create an anchor element to initiate the download
+     var downloadLink = document.createElement('a');
+     downloadLink.href = filePath;
+     downloadLink.download = 'file.txt';
+ 
+     // Append the link to the document body (required for Firefox)
+     document.body.appendChild(downloadLink);
+ 
+     // Trigger the download
+     downloadLink.click();
+ 
+     // Remove the link from the document body after triggering the download
+     document.body.removeChild(downloadLink);
+ });
+ 
+</script>
+{% endblock javascripts %}
