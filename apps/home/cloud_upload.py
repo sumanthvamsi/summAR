@@ -5,9 +5,6 @@ from botocore.exceptions import ClientError
 from django.conf import settings
 import pytz
 
-AWS_ACCESS_KEY = 'AKIA3TNC54RBJ7LOYW5R'
-AWS_SECRET_KEY = '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'
-S3_BUCKET_NAME = 'summar'
 
 # Function to upload file to S3 with a specific folder and filename
 def upload_to_s3(file_path, folder_name, filename):
