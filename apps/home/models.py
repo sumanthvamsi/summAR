@@ -69,11 +69,11 @@ class summary_file(models.Model):
     p_num=models.BigIntegerField(default=True)
 
     def _str_(self):
-        return self.p_name
+        return f"{self.p_name}_{self.p_num}"
     
 class meta_video(models.Model):
     pv_name=models.CharField(default=False,max_length=10)
     pv_num=models.BigIntegerField(default=True)
 
     def _str_(self):
-        return self.pv_name
+        return f"{self.pv_name}_{self.pv_num}"

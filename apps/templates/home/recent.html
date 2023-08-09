@@ -5,6 +5,33 @@
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}
 <style>
+  .card {
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+/* Hover effect */
+/* Hover effect */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3bb9b9; /* Change this to your desired solid color */
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+/* Click effect */
+.card:active {
+  background-color: #2e9b9b; /* Change this to your desired solid color */
+}
   /* Style the slider container */
   .slider-container {
       width: 300px;
@@ -27,6 +54,32 @@
 </style>
 {% endblock stylesheets %}
 {% block content %}
+<style>
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+  #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  #content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+  }
+</style>
+<video id="video-background" autoplay muted loop>
+  <source src="static/assets/videos/bg_video.mp4" type="video/mp4">
+  
+</video>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -54,9 +107,9 @@
                             <form action="{% url 'cloud'  %}" method='POST' enctype="multipart/form-data">
                                 {% csrf_token %}
                                 
-                                <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="p_name">
+                                <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff;">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="p_name">
                                 <br>
-                                <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="p_num">
+                                <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff;">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="p_num">
                                 <br>
                                 
                                 <button type="submit" class="btn btn-primary">Submit</button>

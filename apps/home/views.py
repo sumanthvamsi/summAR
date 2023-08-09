@@ -38,6 +38,7 @@ def cloud_retrieval(request):
         obj = form.save(commit=False)
         obj.save()
         name=obj.p_name
+        name=name.upper()
         num=obj.p_num
         
         folder_name = f'{name}_{num}'  
@@ -190,6 +191,7 @@ def video_upload(request):
         obj = form.save(commit=False)
         obj.save()
         name=obj.pv_name
+        name=name.upper()
         number=obj.pv_num
         id=obj.id
         value=request.POST.get('slider_value')

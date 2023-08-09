@@ -5,6 +5,60 @@
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}  {% endblock stylesheets %}
 {% block content %}
+<style>
+  .card {
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+/* Hover effect */
+/* Hover effect */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3bb9b9; /* Change this to your desired solid color */
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+/* Click effect */
+.card:active {
+  background-color: #3bb9b9; /* Change this to your desired solid color */
+}
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    
+  }
+  #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  #content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+  }
+</style>
+<video id="video-background" autoplay muted loop>
+  <source src="static/assets/videos/bg_video.mp4" type="video/mp4">
+  
+</video>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -148,21 +202,21 @@
                       <br>
                           <ol>           
                             <br>                    
-                              <li style="font-size: large;"><b>Be Respectful:</b> Treat others with respect and kindness. Do not engage in harassment, hate speech, or discriminatory behavior. </li><br>
-                              <li style="font-size: large;"><b>Keep it Positive:</b> Keep Maintain a positive and constructive attitude in your interactions. Avoid negativity, trolling, or disruptive behavior.                                </li><br>
-                              <li style="font-size: large;"><b>No Spam or Self-Promotion:</b> Do not spam the platform with unrelated or promotional content. Respect the community and focus on relevant discussions.
+                              <li style="font-size: large;color: #fff;"><b>Be Respectful:</b> Treat others with respect and kindness. Do not engage in harassment, hate speech, or discriminatory behavior. </li><br>
+                              <li style="font-size: large;color: #fff;"><b>Keep it Positive:</b> Keep Maintain a positive and constructive attitude in your interactions. Avoid negativity, trolling, or disruptive behavior.                                </li><br>
+                              <li style="font-size: large;color: #fff;"><b>No Spam or Self-Promotion:</b> Do not spam the platform with unrelated or promotional content. Respect the community and focus on relevant discussions.
                               </li><br>
-                              <li style="font-size: large;"><b>Protect Privacy:</b> Respect the privacy of others. Do not share personal information or engage in unauthorized data collection.
+                              <li style="font-size: large;color: #fff;"><b>Protect Privacy:</b> Respect the privacy of others. Do not share personal information or engage in unauthorized data collection.
                               </li><br>
-                              <li style="font-size: large;"><b>Follow Copyright Laws:</b> Only share content that you have the right to share. Respect intellectual property rights and do not plagiarize or infringe on copyrights.
+                              <li style="font-size: large;color: #fff;"><b>Follow Copyright Laws:</b> Only share content that you have the right to share. Respect intellectual property rights and do not plagiarize or infringe on copyrights.
                               </li><br>
-                              <li style="font-size: large;"><b>Report Violations:</b> If you come across any violations of the platform rules or witness inappropriate behavior, report it to the platform moderators or administrators.
+                              <li style="font-size: large;color: #fff;"><b>Report Violations:</b> If you come across any violations of the platform rules or witness inappropriate behavior, report it to the platform moderators or administrators.
                               </li><br>
-                              <li style="font-size: large;"><b>No Offensive Content:</b> Do not post or share offensive, obscene, or explicit content. Keep the platform safe and suitable for users of all ages.
+                              <li style="font-size: large;color: #fff;"><b>No Offensive Content:</b> Do not post or share offensive, obscene, or explicit content. Keep the platform safe and suitable for users of all ages.
                               </li><br>
-                              <li style="font-size: large;"><b>Engage in Dialogue:</b> Encourage healthy discussions and exchange of ideas. Listen to others' perspectives and engage in meaningful conversations.
+                              <li style="font-size: large;color: #fff;"><b>Engage in Dialogue:</b> Encourage healthy discussions and exchange of ideas. Listen to others' perspectives and engage in meaningful conversations.
                               </li><br>
-                              <li style="font-size: large;"><b>Follow Platform Guidelines:</b> Adhere to the platform's guidelines and terms of service. Familiarize yourself with the rules and ensure compliance.</li>
+                              <li style="font-size: large;color: #fff;"><b>Follow Platform Guidelines:</b> Adhere to the platform's guidelines and terms of service. Familiarize yourself with the rules and ensure compliance.</li>
                           </ol>
                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button onclick="openLinkInNewTab()" class="btn btn-primary">Enter Metaverse</button>
                         </div>
@@ -183,13 +237,13 @@
                     <div class="row"> 
                       <form action="{% url 'video'  %}" method='POST' enctype="multipart/form-data">
                           {% csrf_token %}
-                          <p style="font-family: Verdana,sans-serif; font-size:15px ">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="pv_name">
+                          <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff; ">Enter Your Name : </p><input type="text" class="form-control" placeholder="Name" name="pv_name">
                           <br>
-                          <p style="font-family: Verdana,sans-serif; font-size:15px">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="pv_num">
+                          <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff;">Enter Your Phone Number : </p><input type="number" class="form-control" placeholder="Phone Number" name="pv_num">
                           <br>
-                          <p style="font-family: Verdana,sans-serif; font-size:15px">Submit your Video File : </p><input type="file" class="form-control" name="video_file" accept="video/*" multiple>
+                          <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff;">Submit your Video File : </p><input type="file" class="form-control" name="video_file" accept="video/*" multiple>
                           <br>
-                          <p style="font-family: Verdana,sans-serif; font-size:15px">Select the Summary Length : </p><input type="range" min="1" max="3" value="1" id="slider" name="slider_value" style="width: 300px;" list="tickmarks">
+                          <p style="font-family: Verdana,sans-serif; font-size:15px;color: #fff;">Select the Summary Length : </p><input type="range" min="1" max="3" value="1" id="slider" name="slider_value" style="width: 300px;" list="tickmarks">
                           <span id="sliderValue">Short</span>
                           <datalist id="tickmarks">
                               <option value="1">Short</option>
@@ -212,7 +266,7 @@
                 </div>
                 <div class="card-block">
                     <div class="row">
-                      <p style="font-family: Verdana,sans-serif; font-size:15px; color: black;">{{sum}}</p>
+                      <p style="font-family: Verdana,sans-serif; font-size:15px; color: rgb(255, 255, 255);">{{sum}}</p>
                       <br>
                       <textarea id="text" style="display: none;">
                               
@@ -248,7 +302,19 @@
                           // Generate download of hello.txt
                           // file with some content
                           var text = document.getElementById("text").value;
-                          var filename = "summ.txt";
+                          var currentDate = new Date();
+var date = currentDate.toISOString().slice(0, 10); // Format: YYYY-MM-DD
+var time = currentDate.toTimeString().slice(0, 8); // Format: HH:MM:SS
+
+// Combine date and time into a string
+var dateTimeString = date + "_" + time;
+
+// Original filename
+var filename = "summ.txt";
+
+// Append date and time to the filename
+var filenameWithDateTime = filename.replace(".txt", "_" + dateTimeString + ".txt");
+                         
                         
                           download(filename, text);
                         }, false);
