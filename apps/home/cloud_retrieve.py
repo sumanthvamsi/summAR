@@ -4,10 +4,6 @@ import tempfile
 import time
 from django.conf import settings
 
-# Replace with your AWS credentials
-AWS_ACCESS_KEY_ID = 'AKIA3TNC54RBJ7LOYW5R'
-AWS_SECRET_ACCESS_KEY = 'mRal/pxFi2Gj9l09jPC9HSWZEHSyE3B4c9eVZm1C'
-AWS_BUCKET_NAME = 'summar'
 
 def retrieve_files_with_contents_from_s3(folder_name):
     s3 = boto3.client(
